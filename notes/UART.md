@@ -6,5 +6,6 @@
     - baud rate determines when to sample the data
     - check reference manual for eq (stm32)
         - baud = f_ck /(8 * (2 - over8) * USARTDIV)
+        - we are to choose a target baud rate, then figure out the USARTDIV (target depends on the device we are communicating with but 9600 and 115200 are very common)
 - its really only meant for two devices so it doesn't allow for multiple devices on the same bus
 - idle is normally always high, so when the line goes low, thats how the reciever knows the message is starting, then it goes back to idle when done
